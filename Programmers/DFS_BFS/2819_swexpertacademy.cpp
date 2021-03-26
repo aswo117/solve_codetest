@@ -3,7 +3,7 @@
 * https://github.com/aswo117/solve_codetest/new/main/Programmers/DFS_BFS
 * 
 * 문제 풀이)
-*  모든 경우의 수 를 구하는 문제니 BFS 로 풀이
+*  모든 경우의 수 를 구하는 문제니 BFS 로 풀이 --> 먼가 잘못됫음... BFS 가 아니라 DFS 로 풀어야될꺼같고 먼가 
 */
 
 #include <iostream>
