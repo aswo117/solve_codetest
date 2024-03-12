@@ -24,4 +24,6 @@ for index in range(N):
 			break;
 			
 # for index in range(N):
-print(f"{ans}")
+# print(f"{ans}")
+
+print(' '.join(map(str, ans)))
