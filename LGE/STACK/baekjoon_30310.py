@@ -1,5 +1,4 @@
-#https://www.acmicpc.net/board/view/30310
-#반례 필요
+#https://www.acmicpc.net/problem/2504
 
 b = list(input().strip())
 # b = list(input().split())
@@ -38,7 +37,7 @@ for index in b:
 				stack.append(data)
 			else:
 				stack.append(index)
-		else: # 숫자 일 경우
+		elif type(stack[-1]) is int: # 숫자 일 경우
 			if len(stack) == 1:
 				stack.append(index)
 			elif stack[-2] == '(':
