@@ -1,0 +1,31 @@
+import sys
+
+# def input_data():
+# 	readl = sys.stdin.readline
+# 	loop = readl().strip()
+# 	return loop
+
+# # 입력 받는 부분
+# loop = input_data()
+
+loop = input()
+
+# 코드를 작성하세요
+stack = []
+# loop = input_data()
+for c in loop:
+	# print(f"c = {c}")
+	if c == '>':
+		sub =''
+		while stack[-1] != '<':
+			sub = stack.pop()+sub
+			# print(sub)
+		stack.pop()
+		# print(stack)
+		stack.append(sub[1:]*int(sub[0]))
+		# stack.append(sub*int(sub[0]))
+	else:
+		stack.append(c)
+		# print(stack)
+# print(stack)
+print(stack[-1])
