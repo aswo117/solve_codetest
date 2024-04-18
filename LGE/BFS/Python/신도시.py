@@ -1,5 +1,3 @@
-#https://swedu.lge.com/
-
 # -*- coding: utf-8 -*-
 # UTF-8 encoding when using korean
 from collections import deque
@@ -55,7 +53,7 @@ def check_pip(pip, check_value):
 		# print("return False")
 		return False
 
-sol = -1
+sol = 0
 # 입력받는 부분
 N, sc, sr, map_city = input_data()
 # 여기서부터 작성
@@ -102,7 +100,10 @@ while q:
 for i in range(N):
 	for j in range(N):
 		if maps[i][j] == 0:
-			sol = sol + 1
+			if map_city[i+1][j+1] == 0:
+				continue
+			else:
+				sol = sol + 1
 
 print(sol)
 # print(N, sc, sr, map_city)
