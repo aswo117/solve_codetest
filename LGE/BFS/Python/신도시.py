@@ -56,12 +56,12 @@ def check_pip(pip, check_value):
 sol = 0
 # 입력받는 부분
 N, sc, sr, map_city = input_data()
+#N, 가로, 세로
 # 여기서부터 작성
 
 maps = [[0 for i in range(N)] for j in range(N)]
 maps[sr-1][sc-1] = 1
-q.append((sc-1, sr-1, 1))
-
+q.append((sr-1, sc-1, 1))
 
 while q:
 	x, y, d = q.popleft()
@@ -95,8 +95,6 @@ while q:
 					q.append((nx, ny, d+1))
 		# print(maps)
 # 출력하는 부분
-# print(maps)
-
 for i in range(N):
 	for j in range(N):
 		if maps[i][j] == 0:
