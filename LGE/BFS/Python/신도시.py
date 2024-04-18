@@ -1,3 +1,6 @@
+#https://swedu.lge.com/
+#신도시, Pass
+
 # -*- coding: utf-8 -*-
 # UTF-8 encoding when using korean
 from collections import deque
