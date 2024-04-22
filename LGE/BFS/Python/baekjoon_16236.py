@@ -1,5 +1,3 @@
-#https://www.acmicpc.net/board/view/132035 반례
-
 from collections import deque
 
 N = int(input())
@@ -45,19 +43,19 @@ def find_feed():
 	global next_x, next_y, next_distance, shark_distance, shark_size, shark_feed, call_mam
 	for i in range(N):
 		for j in range(N):
-			if maps_feed[i][j] != 0 and maps_feed[i][j] < shark_size:
+			if maps_feed[i][j] != 0 and maps_feed[i][j] < shark_size and maps_distance[i][j] != 0:
 				q_feed.append((i, j, maps_distance[i][j]))
-	print(f"q_feed = {q_feed}")
+	# print(f"q_feed = {q_feed}")
 	if q_feed:
 		while q_feed:
 			x, y, d = q_feed.popleft()
-			print(f"x, y, d = {x, y, d}")
+			# print(f"x, y, d = {x, y, d}")
 			#거리가 작은게 우선
 			if next_distance > d and d != 0:
 				next_x = x
 				next_y = y
 				next_distance = d
-				print(f"next_distance = {next_distance}")
+				# print(f"next_distance = {next_distance}")
 			else:
 				continue
 			# elif next_feed == d: pass
@@ -69,7 +67,7 @@ def find_feed():
 			shark_feed = 0		
 		if next_distance != 9999:
 			shark_distance = shark_distance+next_distance-1
-			print(f"shark_distance = {shark_distance}")
+			# print(f"shark_distance = {shark_distance}")
 			next_distance = 9999
 	else:
 		call_mam = False
@@ -95,12 +93,12 @@ for i in range(N):
 		break
 
 while(call_mam):
-	print(f"q_distance = {q_distance}")
+	#print(f"q_distance = {q_distance}")
 	calculate_distance()	#거리계산
 	find_feed()	#먹이 계산 및 길찾기
 	q_distance.append((next_x, next_y, 1))	#다음 좌표 입력
-	print_data()
+	#print_data()
 	clear_data()
 
+print(shark_distance)
 	
-
