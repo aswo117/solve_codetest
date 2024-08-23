@@ -1,5 +1,7 @@
 #https://www.acmicpc.net/problem/5014
-#70% Fail
+#70% Fail -> OK
+#BFS에서 append를 하고나서 visited를 해주자
+#graph(BSF)로 문제를 풀면 가지치기 하지말고 vistied로만 처리하자
 
 import sys
 from collections import deque
@@ -9,50 +11,31 @@ input = sys.stdin.readline
 
 F, S, G, U, D = map(int, input().split())
 
-visited = [math.inf]*(F+U+1)
-count = 0
-flag = 0
-current = 0
+visited = [-1]*(F+1)
 
+flag = -1
+currnt = S
 q = deque()
 q.append(S)
-visited[S] = 1
+visited[S] = 0
 
 while q:
 	current = q.popleft()
-	visited[current] = 1
-		
+	# print(current, visited[current])
 	if current == G:
+		print(visited[current])
 		flag = 1
-		print(count)
-		break;
-	else:
-		if current <= G:
-			if current+U <= F and visited[current+U] != 1:
-				count = count+1
-				current = current+U
-				q.append(current)	
-			elif current-D > 0:
-				if visited[current-D] != 1:
-					count = count+1
-					current = current-D
-					q.append(current)
-			else:
-				flag = -1
-				break
+		break
+		
+	for i in (current+U, current-D):
+		# print(f"[+][sung] i = {i}")
+		# print(f"[+][sung] visited[i] = {visited[i]}")
+		if (not 0 < i <= F) or (visited[i] != -1):
+			# print("[+][sung] continue")
+			continue
 		else:
-			if current-D > 0:
-				if visited[current-D] != 1:
-					count = count+1
-					current = current-D
-					q.append(current)
-			elif current+U <= F and visited[current+U] != 1:
-				count = count+1
-				current = current+U
-				q.append(current)
-			else:
-				flag = -1
-				break
-
+			q.append(i)
+			visited[i] = visited[current] + 1
+	
 if flag == -1:
-	print("use the stairs")
+	print("use the stairs")		
