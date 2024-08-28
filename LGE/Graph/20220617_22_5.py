@@ -1,5 +1,5 @@
 #부품 이동 전략 설정
-#1, 2, 5, 11만 Pass
+#1, 2, 5, 11만 Pass -> -2 return 값이 문제 -> Pass
 
 # -*- coding: utf-8 -*-
 # UTF-8 encoding when using korean
@@ -11,7 +11,7 @@ def Input_Data():
     A,B,C,D = map(int,readl().split())
     return A,B,C,D
  
-sol = -2
+sol = -1
 
 # 입력함수
 A,B,C,D = Input_Data()
