@@ -1,22 +1,26 @@
 #https://www.acmicpc.net/problem/1654
-#1 2 
-#1 입력이 안됨..
+#2% fail..
 
+# -*- coding: utf-8 -*-
+# UTF-8 encoding when using korean
 import sys
 from collections import deque
 
-input = sys.stdin.readline
+# input = sys.stdin.readline
 
 K, N = map(int, input().split())
 data_list = list()
 for i in range(K):
-	data_list.append(int(input()))
+	s = input()
+	data_list.append(int(s))
 
 # print(data_list)
 
 #크기를 return 해야
 def check(m):
 	# print(f"[+][sung] check start m = {m}")
+	if m == 0:
+		return 0
 	temp_total = 0
 	for i in data_list:
 		# print(f"[+][sung] i = check the {i}")
