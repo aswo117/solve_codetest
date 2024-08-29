@@ -1,3 +1,7 @@
+#https://www.acmicpc.net/problem/2110
+#total 의 조건이 == C 일때만 찾으면 안됨 (12%Err)
+#>= C 조건도 가능한데, 중간에 하나 빼도 몰 루 이기 때문.. ? 맞나 
+
 import sys
 from collections import deque
 import math
@@ -44,14 +48,10 @@ while S<=E:
 		# print(f"[+][sung] total = 0")
 		E = mid
 		continue
-	elif total > C:	#설치 해야하는 공유기 개수보다 믾이 설치했으므로
-		# print(f"[+][sung] total > C")
+	elif total >= C:	#설치 해야하는 공유기 개수보다 믾이 설치했으므로		
 		S = mid+1
-	elif total == C:	#설치해야 하는 공유기 개수인 C 
-		# print(f"[+][sung] total == C")
 		if max_mid <= mid:
-			max_mid = mid
-		break
+			max_mid = mid			
 	else:
 		E = mid-1
 	
