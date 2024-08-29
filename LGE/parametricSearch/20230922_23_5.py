@@ -1,3 +1,5 @@
+#5개 Pass
+
 import sys
 from collections import deque
 import math
