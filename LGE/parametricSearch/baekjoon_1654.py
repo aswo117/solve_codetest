@@ -1,6 +1,5 @@
 #https://www.acmicpc.net/problem/1654
-#2% fail..
-
+#success
 # -*- coding: utf-8 -*-
 # UTF-8 encoding when using korean
 import sys
