@@ -1,5 +1,6 @@
 #https://www.acmicpc.net/problem/1654
 #success
+
 # -*- coding: utf-8 -*-
 # UTF-8 encoding when using korean
 import sys
@@ -36,7 +37,7 @@ def check(m):
 	return temp_total	
 	
 S = 0
-E = 1000000
+E = (2**31)-1
 max_mid = 0
 
 while S<=E:
