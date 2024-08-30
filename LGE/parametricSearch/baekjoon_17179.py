@@ -29,16 +29,17 @@ for i in range(N):
 # print(cutcount_list)
 
 S = 1
-E = L #L 이어도 되지 않을까?
+E = 4000000 #L 이어도 되지 않을까?
 max_mid = 0
 
 #은 자르는 길이
 def check(m):
 	temp = 0
 	start_point = 0
-	for idx, data in enumerate(cutpoint_list):
+	new_cake_list = cutpoint_list + [L]
+	for idx, data in enumerate(new_cake_list):
 		# print(f"[+][sung] {m} - ({cutpoint_list[idx]}-{cutpoint_list[start_point]}) = {m - (cutpoint_list[idx]-cutpoint_list[start_point])}")
-		if m - (cutpoint_list[idx]-cutpoint_list[start_point]) <= 0:
+		if m - (new_cake_list[idx]-new_cake_list[start_point]) <= 0:
 			temp = temp+1
 			start_point = idx
 	return temp	
@@ -57,7 +58,7 @@ for i in cutcount_list:
 		# 	continue
 		#자르는 횟수보다 크거나 같으면 줄여야 되니 앞을 댕겨
 		#이부분이 이해가 안된다..
-		if total >= i:
+		if total >= i+1:
 			S = mid+1
 			if max_mid < mid:
 				max_mid = mid
