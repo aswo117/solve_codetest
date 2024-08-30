@@ -36,7 +36,7 @@ max_mid = 0
 def check(m):
 	temp = 0
 	start_point = 0
-	new_cake_list = cutpoint_list + [L]
+	new_cake_list = cutpoint_list + [L] #List 뒤에 있는 L만큼 추가해주는 코드인가.. (영윤C)
 	for idx, data in enumerate(new_cake_list):
 		# print(f"[+][sung] {m} - ({cutpoint_list[idx]}-{cutpoint_list[start_point]}) = {m - (cutpoint_list[idx]-cutpoint_list[start_point])}")
 		if m - (new_cake_list[idx]-new_cake_list[start_point]) <= 0:
@@ -58,7 +58,7 @@ for i in cutcount_list:
 		# 	continue
 		#자르는 횟수보다 크거나 같으면 줄여야 되니 앞을 댕겨
 		#이부분이 이해가 안된다..
-		if total >= i+1:
+		if total >= i+1: #여기서 왜 +1을?
 			S = mid+1
 			if max_mid < mid:
 				max_mid = mid
