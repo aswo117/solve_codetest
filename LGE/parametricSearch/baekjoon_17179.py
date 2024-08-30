@@ -36,7 +36,7 @@ max_mid = 0
 def check(m):
 	temp = 0
 	start_point = 0
-	new_cake_list = cutpoint_list + [L] #List 뒤에 있는 L만큼 추가해주는 코드인가.. (영윤C)
+	new_cake_list = cutpoint_list + [L] #마지막 지점을 추가해줘야됨.
 	for idx, data in enumerate(new_cake_list):
 		# print(f"[+][sung] {m} - ({cutpoint_list[idx]}-{cutpoint_list[start_point]}) = {m - (cutpoint_list[idx]-cutpoint_list[start_point])}")
 		if m - (new_cake_list[idx]-new_cake_list[start_point]) <= 0:
