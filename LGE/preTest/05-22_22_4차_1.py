@@ -1,4 +1,5 @@
-#1 
+#05-22_22_4차
+#1 (OK)
 # -*- coding: utf-8 -*-
 # UTF-8 encoding when using korean
 import sys
