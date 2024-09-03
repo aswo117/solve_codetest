@@ -1,4 +1,6 @@
-#3/11
+# List 의 총 합 구하기 sum()
+# list 자체가 stack, pop()을 쓰면 그냥 stack이다
+# sort 할때 stack.sort(reverse=True) 로 하면 내림차순
 # -*- coding: utf-8 -*-
 # UTF-8 encoding when using korean
 import sys
@@ -12,47 +14,26 @@ for i in range(N):
 	data_list.append([X, Y])
 
 data_list.sort()
-# print(data_list)
-
-# q = deque()
+stack = list()
 total_cost = 0
 
-for i in range(N):
-	# q.append(data_list[i])
-	# print(f"[+][sung] q = {q}")
-	
-	if len(data_list) == 1:
-		continue
-	else:
-		#data_list[i][1] 새로 들어온 값
-		if data_list[i][1] >= data_list[i-1][1]: #새로 들어온 값이 기존 값보다 크거나 같을 경우
-			# q.append(data_list[i]) #q에 그냥 넣어줌
-			continue
-		else:#새로 들어온 값이 기존 값보다 작을 경우 (update 해줘야 됨)
-			#temp code, 끝까지 비교하는 코드가 들어가야됨.
-			j = i-1
-			while data_list[i][1] <= data_list[j][1]:
-				data_list[j][1] = data_list[i][1]
-				j = j -1
-				if j < 0:
-					break
-			# q.append(data_list[i])
-	
-	# print(data_list)
+# print(data_list)
 
-# if len(q) == 1: #data개수가 1일 경우
-# 	print(data_list[0][1])
-# else:
-# 	while q:
-# 		dist, cost = q.popleft()
-# 		print(cost)
-# 		total_cost = cost + total_cost
+for i in range(N):
+	# print(f"[+][sung] data_list[i][1] = {data_list[i][1]}")
+	if not stack:
+		stack.append(data_list[i][1])
+	else:
+		while 1:
+			if not stack or data_list[i][1] >= stack[-1]: #새로 들어온 data값이 stack 최상단 값보다 크면
+				stack.append(data_list[i][1])
+				break
+			else:
+				total_cost = total_cost + data_list[i][1]
+				stack.pop()
 	
-# 	print(total_cost)
-if len(data_list) == 1:
-	print(data_list[0][1])
-else:
-	for i in range(N):
-		total_cost = total_cost + data_list[i][1]
-		
-	print(total_cost)
+	# print(stack)
+	# print(f"[+][sung] total_cost = {total_cost}")
+
+
+print(total_cost + sum(stack))
