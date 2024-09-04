@@ -1,3 +1,4 @@
+# 다중 구간 문제
 # -*- coding: utf-8 -*-
 # UTF-8 encoding when using korean
 import sys
