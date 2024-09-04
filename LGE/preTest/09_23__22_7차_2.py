@@ -1,5 +1,11 @@
 # -*- coding: utf-8 -*-
 # UTF-8 encoding when using korean
+# 최대 수업을 들을 수 있어야 되니, x0 기준이 아니라 x1 기준으로 정렬해야 한다.
+# x1 로 정렬해야 될 때 lamda 의 활용법을 이해하자
+# ex 1. sort(key=lamda x : (x[1], x[0])) --> x[1]로 정렬하고 같으면 x[0] 기준으로 정렬하는 방법
+# ex 2. List의 Data는 그대로 두고 index 값만 바꾸는 방법이 있다.
+#       index_list = list(range(len(a)))
+#       index_list.sort(key = lamda x : a[x])
 import sys
  
 def Input_Data():
@@ -21,7 +27,7 @@ for i in range(N):
 	time_list.append((info[i][0], info[i][0] + info[i][1] + 2)) # End 시간은 처음시간 + 걸리는 시간 + 휴식시간(2시간)
 # print(time_list)
 
-time_list.sort()
+time_list.sort(key=lambda x : (x[1]))
 
 compare_time = time_list[0][1]
 for i in range(1, N):
