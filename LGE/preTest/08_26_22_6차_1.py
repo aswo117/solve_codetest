@@ -1,4 +1,3 @@
-# 1번만 맞음..
 # -*- coding: utf-8 -*-
 # UTF-8 encoding when using korean
 import sys
@@ -25,8 +24,8 @@ def Solve():
         else:
            A[i][1] = A[i-1][1]
         # print(f"A[i][1] = {A[i][1]}")
-    if maxint < A[i][0] - A[i][1]:
-       maxint = A[i][0] - A[i][1]
+    if maxint < A[i-1][1] - start:
+       maxint = A[i-1][1] - start
     return maxint
  
 ans = -1
