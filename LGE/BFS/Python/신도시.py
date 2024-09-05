@@ -80,8 +80,8 @@ while q:
 			continue
 		#검출 알고리즘
 		# print(f"[+][sung] dx = {dx}, dy = {dy}")
-		if dx == -1 and dy == 0: #상
-			if (check_pip(map_city[x+1][y+1], (0, -1)) is True) and (check_pip(map_city[nx+1][ny+1], (0, 1)) is True):
+		if dx == -1 and dy == 0: #상 # 왜 +1인지 그리고 이게 왜 상 하야? 좌 우 아니야?
+			if (check_pip(map_city[x+1][y+1], (0, -1)) is True) and (check_pip(map_city[nx+1][ny+1], (0, 1)) is True): #근데 여긴 상 하를 보고 있네..
 					maps[nx][ny] = d + 1
 					q.append((nx, ny, d+1))
 		elif dx == 1 and dy == 0: #하
