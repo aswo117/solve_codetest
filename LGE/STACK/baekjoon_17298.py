@@ -1,29 +1,49 @@
 #https://www.acmicpc.net/problem/17298
-#반례찾아야됨.
+#OK
+
+import sys
+from collections import deque
+
+stack = []
 
 N = int(input())
-b = list(map(int, input().split()))
-stack = []
-ans = [-1]*N
+data_list = list(map(int, input().split()))
+result_list = []
+# idx = N-1
+# print(data_list)
 
-# print(f"[+][sung]")
-# print(f"[+][sung] N = {N}, b = {b} stack = {stack} ans = {ans}")
-
-for index in range(N):
-	# print(f"[+][sung] index = {index}, N = {N}, stack = {stack}")
-	while(1):
+for i in range(N):
+	while 1:
 		if not stack:
-			# print(f"[+][sung] stack is NULL")
-			stack.append(index)
-			break;
-		elif b[index] > b[stack[-1]]:
-			ans[stack[-1]] = b[index]
-			stack.pop()
+			stack.append([data_list[-1], -1])
+			result_list.append(-1)
+			data_list.pop()
 		else:
-			stack.append(index)
-			break;
+			if not data_list:
+				break
+			if stack[-1][0] > data_list[-1]:
+				result_list.append(stack[-1][0])
+				stack.append([data_list[-1], stack[-1][0]])	
+				data_list.pop()
+				break
+			else:
+				if not stack:
+					result_list.append(-1)
+					stack.append([data_list[-1], -1])
+					data_list.pop()
+					break
+				elif stack[-1][1] > data_list[-1]:
+					result_list.append(stack[-1][1])
+					stack.append([data_list[-1], stack[-1][1]])	
+					data_list.pop()
+					break
+				else:
+					# result_list.append(-1)
+					# stack.append([data_list[-1], -1])
+					stack.pop()
 			
-# for index in range(N):
-# print(f"{ans}")
+			
+	# print(stack)
 
-print(' '.join(map(str, ans)))
+result_list.reverse()
+print(' '.join(map(str, result_list)))
