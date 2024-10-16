@@ -3,12 +3,11 @@
 import sys
 from collections import deque
 
-maps = []
-q = deque()
-
 while 1:
+	q = deque()
+	maps = []
 	L, R, C = map(int, input().split())
-	print(f"L, R, C = {L, R, C}")
+	# print(f"L, R, C = {L, R, C}")
 	if L == 0 and R == 0 and C == 0:
 		# print("out")
 		break
