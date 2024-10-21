@@ -4,8 +4,23 @@
 
 * 입출력 Template이 필요한 경우 Python 제출은 다음 코드를 복사하여 코드를 작성하시오.
 
-This is a normal paragraph:
+'''
+import sys 
 
-    This is a code block.
-    
-end code block.
+def input_data(): 
+    readl = sys.stdin.readline 
+    N = int(readl()) 
+    info = [list(map(int, readl().split())) for _ in range(N)] 
+    return N, info 
+
+sol = 0 
+
+# 입력받는 부분 
+N, info = input_data() 
+
+# 여기서부터 작성 
+
+# 출력하는 부분 
+
+print(sol) 
+'''
