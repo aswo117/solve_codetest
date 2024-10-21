@@ -4,7 +4,7 @@
 
 * 입출력 Template이 필요한 경우 Python 제출은 다음 코드를 복사하여 코드를 작성하시오.
 
-'''
+```
 import sys 
 
 def input_data(): 
@@ -23,4 +23,4 @@ N, info = input_data()
 # 출력하는 부분 
 
 print(sol) 
-'''
+```
