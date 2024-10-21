@@ -1,7 +1,11 @@
-# solve_codetest
-코딩 실력 향상과 기업 코드테스트 준비를 위한 repository
+가로, 세로의 크기가 각각 100인 정사각형 모양의 흰색 도화지가 있다. 이 도화지 위에 가로, 세로의 크기가 각각 10인 정사각형 모양의 검은색 색종이를 색종이의 변과 도화지의 변이 평행하도록 붙인다. 이러한 방식으로 색종이를 한 장 또는 여러 장 붙인 후 색종이가 붙은 검은 영역의 둘레의 길이를 구하는 프로그램을 작성하시오.
+[그림삽입]
+예를 들어 흰색 도화지 위에 네 장의 검은색 색종이를 <그림 1>과 같은 모양으로 붙였다면 검은색 영역의 둘레는 96 이 된다.
 
-## step 1
-- LG Code Test 통과
-  http://clm.lge.com/issue/browse/IVD-828
+* 입출력 Template이 필요한 경우 Python 제출은 다음 코드를 복사하여 코드를 작성하시오.
 
+This is a normal paragraph:
+
+    This is a code block.
+    
+end code block
