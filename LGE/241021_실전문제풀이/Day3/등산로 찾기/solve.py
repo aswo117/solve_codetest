@@ -10,6 +10,9 @@
 #     그 후 둘래에서 나오는 값들 중 최소값을 구해라.
 #     오르막 내리막 잘 생각해라. 목적지에서 출발한다고 반대로 하면 안됨.
 # 이때 goal은 r_top, c_top
+
+#while 종료 조건을 1로 했음... q로 하자
+#비교를 visitied[nx][ny] > next_value + visitied[x][y]: 로 안했음. 방문하는 지점과 현제 지점+이동값이 더 작을 경우로 조건을 달아야됨.
  
 import sys
 import math
