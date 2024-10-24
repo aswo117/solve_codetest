@@ -58,9 +58,14 @@ print(sol)
 - 추가 정보
 ```
 입력 예시 농장의 잔디구간은 다음과 같다.
-[image](https://github.com/user-attachments/assets/ad8d7117-f984-4d77-ad9a-386ac08e2edb)
+```
+![image](https://github.com/user-attachments/assets/503fc243-4c2d-4f7b-8b53-619067ad82ae)
+
+```
 소들이 0,2,4,6,9 위치에 서 있으면 D는 2가 된다. 
+```
+![image](https://github.com/user-attachments/assets/cc78ea50-b248-48c7-88fa-bbddccc3f8a6)
 
-
+```
 Test case의 40%는 b<=105 임
 ```
