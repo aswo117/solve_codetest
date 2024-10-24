@@ -63,3 +63,6 @@ print(*sol[1:])
 ```
 51 35 31 30 30 
 ```
+- 풀이 방법
+![image](https://github.com/user-attachments/assets/f9ad69ff-30aa-4ec9-8455-e08cc343a6ee)
+
