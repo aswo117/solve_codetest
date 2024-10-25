@@ -57,6 +57,6 @@ print(sol)
 ```
 3
 ```
-- 추가 정보
-```
-```
+- 힌트
+![image](https://github.com/user-attachments/assets/ea8f82ac-070f-4287-9da2-f99e67cd56fd)
+
