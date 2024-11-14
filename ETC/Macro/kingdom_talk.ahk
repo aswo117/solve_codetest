@@ -1,5 +1,8 @@
 ;Todo > imagesearch로 원하는 단어나올 때 까지 반복>고구려버전, 부여버전
 
+#NoEnv
+#Singleinstance Force ; 스크립트 꺼지고 새로 켜짐
+
 \::
 ;마우스 이동 및 클릭
 click 1000 100 ; click king 수정 필요
