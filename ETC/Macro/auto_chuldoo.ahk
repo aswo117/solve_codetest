@@ -2,6 +2,9 @@
 ;좌표는 window spy 참고
 ;op[], exit = F4
 
+#NoEnv
+#Singleinstance Force ; 스크립트 꺼지고 새로 켜짐
+
 $o:: ; 출두 본궁
 Sendinput, {u} ; item use
 sleep, 80
