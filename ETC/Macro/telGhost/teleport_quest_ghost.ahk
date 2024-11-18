@@ -98,7 +98,7 @@ F4:: ; 종료
 ExitApp
 return
 
-F5:: ; 메크로 잠시 멈춤(왕쿠용중 사용 금지)
+F5:: ; suspend/resume(왕쿠용중 사용 금지)
 Suspend
 return
 
@@ -150,8 +150,9 @@ Loop
     ;pd
     Sendinput, {PgDn}
     sleep, 250
-    ;pd
     Sendinput, {PgDn}
+    sleep, 250
+	Sendinput, {PgDn}
     sleep, 250
     ;1.5s delay
     sleep, 1500
@@ -159,18 +160,21 @@ Loop
     ImageSearch, vx, vy, 0, 0, 1920, 1080, *30 Bitch.png
     if (ErrorLevel = 0)
     {
+		SoundPlay, DoorBell.wav ;소리 바꾸기
         teleport(gosthouse_name)
         break
     }
     ImageSearch, vx, vy, 0, 0, 1920, 1080, *30 Fire.png
     if (ErrorLevel = 0)
     {
+		SoundPlay, DoorBell.wav
         teleport(gosthouse_name)
         break
     }
     ImageSearch, vx, vy, 0, 0, 1920, 1080, *30 Egg.png
     if (ErrorLevel = 0)
     {
+		SoundPlay, DoorBell.wav
         teleport(gosthouse_name)
         break
     }
