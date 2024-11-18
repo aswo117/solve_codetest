@@ -10,7 +10,7 @@ global clear_flag = 0
 
 teleport(name)
 {
-	global clear_flag = 0
+	global clear_flag = 1
     Sendinput, {u} ; item use
     sleep, 100
     Sendinput, {i} ; yello item
@@ -61,7 +61,7 @@ sleep, 100
 return
 
 e:: ;마비 돌리기
-Sendinput, {6} ; 
+Sendinput, {6} ;
 sleep, 50
 Sendinput, {Right} ;
 sleep, 50
@@ -98,7 +98,7 @@ F4:: ; 종료
 ExitApp
 return
 
-F5:: ; 메크로 잠시 멈춤
+F5:: ; 메크로 잠시 멈춤(왕쿠용중 사용 금지)
 Suspend
 return
 
@@ -116,13 +116,15 @@ Loop
     Sendinput, {Space}
     sleep, 200
     ;??
-	
+
 	;본궁 출두 후 처리시 케릭 아래로 이동 방지
-	if (global clear_flag == 0)
+	if (global clear_flag == 1)
 	{
-		global clear_flag = 1
+		MsgBox, %clear_flag%
+		global clear_flag = 0
 		continue
 	}
+	MsgBox, %clear_flag%
     Sendinput, {Down}
     sleep, 200
     ;Space
