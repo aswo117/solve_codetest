@@ -10,7 +10,7 @@ global clear_flag = 0
 
 teleport(name)
 {
-	global clear_flag = 1
+    global clear_flag = 1
     Sendinput, {u} ; item use
     sleep, 100
     Sendinput, {i} ; yello item
@@ -116,15 +116,14 @@ Loop
     Sendinput, {Space}
     sleep, 200
     ;??
-
-	;본궁 출두 후 처리시 케릭 아래로 이동 방지
-	if (global clear_flag == 1)
-	{
-		MsgBox, %clear_flag%
-		global clear_flag = 0
-		continue
-	}
-	MsgBox, %clear_flag%
+    ;본궁 출두 후 처리시 케릭 아래로 이동 방지
+    if (global clear_flag == 1)
+    {
+        MsgBox, %clear_flag%
+        global clear_flag = 0
+        continue
+    }
+    MsgBox, %clear_flag%
     Sendinput, {Down}
     sleep, 200
     ;Space
@@ -152,7 +151,7 @@ Loop
     sleep, 250
     Sendinput, {PgDn}
     sleep, 250
-	Sendinput, {PgDn}
+    Sendinput, {PgDn}
     sleep, 250
     ;1.5s delay
     sleep, 1500
@@ -160,24 +159,24 @@ Loop
     ImageSearch, vx, vy, 0, 0, 1920, 1080, *30 Bitch.png
     if (ErrorLevel = 0)
     {
-		SoundPlay, DoorBell.wav ;소리 바꾸기
+        SoundPlay, DoorBell.wav ;소리 바꾸기
         teleport(gosthouse_name)
         break
     }
     ImageSearch, vx, vy, 0, 0, 1920, 1080, *30 Fire.png
     if (ErrorLevel = 0)
     {
-		SoundPlay, DoorBell.wav
+        SoundPlay, DoorBell.wav
         teleport(gosthouse_name)
         break
     }
     ImageSearch, vx, vy, 0, 0, 1920, 1080, *30 Egg.png
     if (ErrorLevel = 0)
     {
-		SoundPlay, DoorBell.wav
+        SoundPlay, DoorBell.wav
         teleport(gosthouse_name)
         break
     }
-	;Todo) 국내성 이미지 추가 필요
-	;독충, 몽달, 빗자루
+    ;Todo) 국내성 이미지 추가 필요
+    ;독충, 몽달, 빗자루
 }
