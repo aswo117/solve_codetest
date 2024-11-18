@@ -6,8 +6,11 @@
 Kingdom_name = 추억보정바람 ;왕국 아이디
 gosthouse_name = 홈령짬뽕 ;흉출 아이디
 
+global clear_flag = 0
+
 teleport(name)
 {
+	global clear_flag = 0
     Sendinput, {u} ; item use
     sleep, 100
     Sendinput, {i} ; yello item
@@ -31,10 +34,10 @@ o:: ; 출두 본궁
 teleport(Kingdom_name)
 return
 
-q:: ;디버프 걸기
+q:: ;디버프(저중마) 걸기
 Sendinput, {5} ;
 sleep, 100
-Sendinput, {Left} ;
+Sendinput, {Right} ;
 sleep, 100
 Sendinput, {Enter} ;
 sleep, 100
@@ -55,6 +58,15 @@ Sendinput, {u} ; item use
 sleep, 100
 Sendinput, {3} ;
 sleep, 100
+return
+
+e:: ;마비 돌리기
+Sendinput, {6} ; 
+sleep, 50
+Sendinput, {Right} ;
+sleep, 50
+Sendinput, {Enter} ;
+sleep, 50
 return
 
 del:: ;생존힐
@@ -82,11 +94,15 @@ Sendinput, {Enter} ;
 sleep, 100
 return
 
-F4::
+F4:: ; 종료
 ExitApp
 return
 
-\::
+F5:: ; 메크로 잠시 멈춤
+Suspend
+return
+
+\:: ; 왕퀘용
 Loop
 {
     click 736 76 ; click king
@@ -100,6 +116,13 @@ Loop
     Sendinput, {Space}
     sleep, 200
     ;??
+	
+	;본궁 출두 후 처리시 케릭 아래로 이동 방지
+	if (global clear_flag == 0)
+	{
+		global clear_flag = 1
+		continue
+	}
     Sendinput, {Down}
     sleep, 200
     ;Space
@@ -149,4 +172,6 @@ Loop
         teleport(gosthouse_name)
         break
     }
+	;Todo) 국내성 이미지 추가 필요
+	;독충, 몽달, 빗자루
 }
