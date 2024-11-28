@@ -3,8 +3,9 @@
 #NoEnv
 #Singleinstance Force ;
 
-Kingdom_name = 추억보정바람 ;왕국 아이디
-gosthouse_name = 홈령짬뽕 ;흉출 아이디
+Kingdom_name = 멀태태 ; 테저
+gosthouse_name = 댕하 ;찎먺
+gosthouse_name2 =  엔트리코 ;또라마마가가
 
 global clear_flag = 0
 
@@ -34,6 +35,14 @@ o:: ; 출두 본궁
 teleport(Kingdom_name)
 return
 
+p:: ; 흉 출두
+teleport(gosthouse_name)
+return
+
+[:: ; 흉 출두2
+teleport(gosthouse_name2)
+return
+
 q:: ;디버프(저중마) 걸기
 Sendinput, {5} ;
 sleep, 100
@@ -60,14 +69,28 @@ Sendinput, {3} ;
 sleep, 100
 return
 
-e:: ;마비 돌리기
-Sendinput, {6} ;
-sleep, 50
-Sendinput, {Right} ;
-sleep, 50
-Sendinput, {Enter} ;
-sleep, 50
-return
+;e:: ; 재접봉
+;Sendinput, {Alt down} ; press alt
+;sleep, 100
+;Sendinput, {x} ; 재접
+;sleep, 100
+;Sendinput, {Alt up} ; release alt
+;sleep, 100
+;Sendinput, {y} ; 수락
+;sleep, 100
+;click 1400 761 ; 이어하기
+;sleep, 150
+;click 1400 761 ; 이어하기
+;sleep, 150
+;click 950 371 ; 문현준
+;sleep, 150
+;click 950 371 ; 문현준
+;sleep, 150
+;click 950 841 ; OK
+;sleep, 150
+;click 950 841 ; OK
+;sleep, 150
+;return
 
 del:: ;생존힐
 Sendinput, {4} ;
@@ -119,11 +142,12 @@ Loop
     ;본궁 출두 후 처리시 케릭 아래로 이동 방지
     if (global clear_flag == 1)
     {
-        MsgBox, %clear_flag%
+        ;MsgBox, %clear_flag%
         global clear_flag = 0
-        continue
+        sleep, 500
+        return
     }
-    MsgBox, %clear_flag%
+    ;MsgBox, %clear_flag%
     Sendinput, {Down}
     sleep, 200
     ;Space
@@ -148,35 +172,58 @@ Loop
     sleep, 200
     ;pd
     Sendinput, {PgDn}
-    sleep, 250
+    sleep, 300
     Sendinput, {PgDn}
-    sleep, 250
+    sleep, 300
     Sendinput, {PgDn}
-    sleep, 250
+    sleep, 300
     ;1.5s delay
     sleep, 1500
 
     ImageSearch, vx, vy, 0, 0, 1920, 1080, *30 Bitch.png
     if (ErrorLevel = 0)
     {
-        SoundPlay, DoorBell.wav ;소리 바꾸기
+        ;SoundPlay, mario.wav ;소리 바꾸기
         teleport(gosthouse_name)
         break
     }
     ImageSearch, vx, vy, 0, 0, 1920, 1080, *30 Fire.png
     if (ErrorLevel = 0)
     {
-        SoundPlay, DoorBell.wav
+        ;SoundPlay, mario.wav
         teleport(gosthouse_name)
         break
     }
     ImageSearch, vx, vy, 0, 0, 1920, 1080, *30 Egg.png
     if (ErrorLevel = 0)
     {
-        SoundPlay, DoorBell.wav
+        ;SoundPlay, mario.wav
         teleport(gosthouse_name)
         break
     }
     ;Todo) 국내성 이미지 추가 필요
     ;독충, 몽달, 빗자루
+;    ImageSearch, vx, vy, 0, 0, 1920, 1080, *30 Mop.png
+;    if (ErrorLevel = 0)
+;    {
+;        SoundPlay, mario.wav
+;        teleport(gosthouse_name)
+;        break
+;    }
+    ImageSearch, vx, vy, 0, 0, 1920, 1080, *30 Bug.png
+    if (ErrorLevel = 0)
+    {
+
+
+        SoundPlay, mario.wav
+        teleport(gosthouse_name)
+        break
+    }
+    ImageSearch, vx, vy, 0, 0, 1920, 1080, *30 Mong.png
+    if (ErrorLevel = 0)
+    {
+        SoundPlay, mario.wav
+        teleport(gosthouse_name)
+        break
+    }
 }
