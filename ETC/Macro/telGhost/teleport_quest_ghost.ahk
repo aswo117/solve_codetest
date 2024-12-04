@@ -125,6 +125,24 @@ F5:: ; suspend/resume(왕쿠용중 사용 금지)
 Suspend
 return
 
+/* 왕퀘 Test용
+Loop, 30
+{
+    click 736 76 ; click king
+    sleep, 10
+}
+
+Sendinput, {s} ;
+Sleep, 10
+
+Loop, 11
+{
+    Sendinput, {PgDn} ;        
+}
+SendInput, {PgDn}
+Sleep, 840
+*/
+
 \:: ; 왕퀘용
 Loop
 {
