@@ -245,3 +245,50 @@ Loop
         break
     }
 }
+
+/*
+\:: ; 왕퀘용
+Loop
+{
+    Loop, 30
+    {
+        click 1400 761 ;
+        sleep, 10
+    }
+
+    Sendinput, {s};
+    sleep, 100
+
+    Loop, 10
+    {
+        Sendinput, {PgDn} ;
+        sleep, 10
+    }
+    sleep, 840
+
+
+    ImageSearch, vx, vy, 0, 0, 1920, 1080, *30 Bitch.png
+    if (ErrorLevel = 0)
+    {
+		SoundPlay, DoorBell.wav ;소리 바꾸기
+        teleport(gosthouse_name)
+        break
+    }
+    ImageSearch, vx, vy, 0, 0, 1920, 1080, *30 Fire.png
+    if (ErrorLevel = 0)
+    {
+		SoundPlay, DoorBell.wav
+        teleport(gosthouse_name)
+        break
+    }
+    ImageSearch, vx, vy, 0, 0, 1920, 1080, *30 Egg.png
+    if (ErrorLevel = 0)
+    {
+		SoundPlay, DoorBell.wav
+        teleport(gosthouse_name)
+        break
+    }
+	;Todo) 국내성 이미지 추가 필요
+	;독충, 몽달, 빗자루
+}
+*/
