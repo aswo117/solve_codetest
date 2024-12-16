@@ -1,5 +1,9 @@
 ;Todo > imagesearch > check ghost house(완) > go to person (완) > pause resume 구현
 /*
+
+    Random, var_100, 100, 105
+    sleep, %var_100%
+
 teleport(name, item)
 {
     if (item = true)
