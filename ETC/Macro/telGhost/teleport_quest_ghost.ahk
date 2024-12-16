@@ -1,4 +1,44 @@
 ;Todo > imagesearch > check ghost house(완) > go to person (완) > pause resume 구현
+/*
+teleport(name, item)
+{
+    if (item = true)
+    {
+        Sendinput, {u} ; item use
+        sleep, 100
+        Sendinput, {i} ; yello item
+        sleep, 100
+    }
+    else
+    {
+        Sendinput, {shift down} ; press shift
+        sleep, 100
+        Sendinput, {z} ; use magic
+        sleep, 100
+        Sendinput, {shift up} ; release shift
+        sleep, 100
+        Sendinput, {z} ; release 비영
+        sleep, 100
+        Sendinput {1}
+        sleep, 100
+        Sendinput {Enter}
+    }
+    Sendinput, {shift down} ; press shift
+    sleep, 100
+    Sendinput, {z} ; use magic
+    sleep, 100
+    Sendinput, {shift up} ; release shift
+    sleep, 100
+    Sendinput, {x} ; release chuldoo
+    sleep, 100
+    Sendinput, %name% ;출두 name?
+    sleep, 100
+    Sendinput, {enter}
+    sleep, 100
+    return
+}
+*/
+
 
 #NoEnv
 #Singleinstance Force ;
