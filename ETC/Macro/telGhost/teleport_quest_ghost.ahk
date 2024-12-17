@@ -14,61 +14,83 @@ teleport(name, item)
     if (item = true)
     {
         Sendinput, {u} ; item use
-        sleep, 101
+        Random, var_100, 100, 105
+        sleep, %var_100%
         Sendinput, {i} ; yello item
-        sleep, 102
+        Random, var_100, 100, 105
+        sleep, %var_100%
     }
     else
     {
         Sendinput, {shift down} ; press shift
-        sleep, 61
+        Random, var_50, 50, 55
+        sleep, %var_50%
         Sendinput, {z} ; use magic
-        sleep, 62
+        Random, var_50, 50, 55
+        sleep, %var_50%
         Sendinput, {shift up} ; release shift
-        sleep, 60
+        Random, var_50, 50, 55
+        sleep, %var_50%
         Sendinput, {z} ; release 비영
-        sleep, 59
+        Random, var_50, 50, 55
+        sleep, %var_50%
         Sendinput {1}
-        sleep, 58
+        Random, var_50, 50, 55
+        sleep, %var_50%
         Sendinput {Enter}
-        sleep, 53
+        Random, var_50, 50, 55
+        sleep, %var_50%
     }
     Sendinput, {shift down} ; press shift
-    sleep, 101
+    Random, var_100, 100, 105
+    sleep, %var_100%
     Sendinput, {z} ; use magic
-    sleep, 99
+    Random, var_100, 100, 105
+    sleep, %var_100%
     Sendinput, {shift up} ; release shift
-    sleep, 100
+    Random, var_100, 100, 105
+    sleep, %var_100%
     Sendinput, {x} ; release chuldoo
-    sleep, 103
+    Random, var_100, 100, 105
+    sleep, %var_100%
     Sendinput, %name% ;출두 name?
-    sleep, 101
+    Random, var_100, 100, 105
+    sleep, %var_100%
     Sendinput, {enter}
-    sleep, 100
+    Random, var_100, 100, 105
+    sleep, %var_100%
     return
 }
 
 `:: ; 저중마헬
-Sendinput, {5} ;
-sleep, 80
-Sendinput, {Enter} ;
-sleep, 80
-Sendinput, {6} ;
-sleep, 80
-Sendinput, {Enter} ;
-sleep, 80
+;Sendinput, {5} ;
+;Random, var_80, 80, 85
+;sleep, %var_80%
+;Sendinput, {Enter} ;
+;Random, var_80, 80, 85
+;sleep, %var_80%
+;Sendinput, {6} ;
+;Random, var_80, 80, 85
+;sleep, %var_80%
+;Sendinput, {Enter} ;
+;Random, var_80, 80, 85
+;sleep, %var_80%
 ;Sendinput, {7} ;
 ;sleep, 80
 ;Sendinput, {Enter} ;
 ;sleep, 80
 Sendinput, {1} ;
-sleep, 80
+Random, var_80, 80, 85
+sleep, %var_80%
 Sendinput, {Enter} ;
-sleep, 80
+Random, var_80, 80, 85
+sleep, %var_80%
 Sendinput, {w} ;
-sleep, 80
+Random, var_80, 80, 85
+sleep, %var_80%
 Sendinput, {w} ;
-sleep, 80
+Random, var_80, 80, 85
+sleep, %var_80%
 return
 
 q:: ; 출두 본궁
@@ -104,36 +126,50 @@ return
 
 w:: ; 동동-공증
 Sendinput, {u} ; item use
-sleep, 100
+Random, var_100, 100, 105
+sleep, %var_100%
 Sendinput, {u} ; item use
-sleep, 100
+Random, var_100, 100, 105
+sleep, %var_100%
 Sendinput, {3} ;
-sleep, 100
+Random, var_100, 100, 105
+sleep, %var_100%
 return
 
 del:: ;생존힐
 Sendinput, {4} ;
-sleep, 50
+Random, var_50, 50, 55
+sleep, %var_50%
 Sendinput, {Home} ;
-sleep, 50
+Random, var_50, 50, 55
+sleep, %var_50%
 Sendinput, {Enter} ;
-sleep, 50
+Random, var_50, 50, 55
+sleep, %var_50%
 Sendinput, {4} ;
-sleep, 50
+Random, var_50, 50, 55
+sleep, %var_50%
 Sendinput, {Enter} ;;
+Random, var_50, 50, 55
+sleep, %var_50%
 return
 
 End:: ;보무
 Sendinput, {9} ;
-sleep, 100
+Random, var_100, 100, 105
+sleep, %var_100%
 Sendinput, {Home} ;
-sleep, 100
+Random, var_100, 100, 105
+sleep, %var_100%
 Sendinput, {Enter} ;
-sleep, 100
+Random, var_100, 100, 105
+sleep, %var_100%
 Sendinput, {0} ;
-sleep, 100
+Random, var_100, 100, 105
+sleep, %var_100%
 Sendinput, {Enter} ;
-sleep, 100
+Random, var_100, 100, 105
+sleep, %var_100%
 return
 
 F4:: ; 종료
@@ -148,64 +184,67 @@ return
 Loop
 {
     click 736 76 ; click king
-    sleep, 121
+    Random, var_100, 100, 105
+    sleep, %var_100%
     click 736 76 ; click king
-    sleep, 120
+    Random, var_100, 100, 105
+    sleep, %var_100%
     ;Space
     Sendinput, {Space}
-    sleep, 171 ; delay 0.1s
+    Random, var_150, 150, 155
+    sleep, %var_150%
     ;Space
     Sendinput, {Space}
-    sleep, 172
-    ;??
-/*
-    ;본궁 출두 후 처리시 케릭 아래로 이동 방지
-    if (global clear_flag == 1)
-    {
-        ;MsgBox, %clear_flag%
-        global clear_flag = 0
-        sleep, 300
-        return
-    }
-*/
-    ;MsgBox, %clear_flag%
+    Random, var_150, 150, 155
+    sleep, %var_150%
+    click 900 385 ; click king
+    Random, var_100, 100, 105
+    sleep, %var_100%
+    click 900 385 ; click king
+    Random, var_100, 100, 105
+    sleep, %var_100%
+    ;Space
+    Sendinput, {Space}
+    Random, var_100, 100, 105
+    sleep, %var_100%
 ;    Sendinput, {Down}
 ;    sleep, 100
     click 900 385 ; click king
-    sleep, 101
+    Random, var_100, 100, 105
+    sleep, %var_100%
     click 900 385 ; click king
-    sleep, 100
+    Random, var_100, 100, 105
+    sleep, %var_100%
     ;Space
     Sendinput, {Space}
-    sleep, 103
-;    Sendinput, {Down}
-;    sleep, 100
-    click 900 385 ; click king
-    sleep, 101
-    click 900 385 ; click king
-    sleep, 103
+    Random, var_100, 100, 105
+    sleep, %var_100%
     ;Space
     Sendinput, {Space}
-    sleep, 102
+    Random, var_100, 100, 105
+    sleep, %var_100%
     ;Space
     Sendinput, {Space}
-    sleep, 100
+    Random, var_100, 100, 105
+    sleep, %var_100%
     ;Space
     Sendinput, {Space}
-    sleep, 104
-    ;Space
-    Sendinput, {Space}
-    sleep, 102
+    Random, var_100, 100, 105
+    sleep, %var_100%
     ;s
     Sendinput, {s} ; item s
-    sleep, 101
+    Random, var_100, 100, 105
+    sleep, %var_100%
     ;pd
     Sendinput, {PgDn}
-    sleep, 100
+    Random, var_100, 100, 105
+    sleep, %var_100%
     Sendinput, {PgDn}
-    sleep, 103
+    Random, var_100, 100, 105
+    sleep, %var_100%
     Sendinput, {PgDn}
-    sleep, 102
+    Random, var_100, 100, 105
+    sleep, %var_100%
     ;1.5s delay
     Random, var_300, 300, 320
     sleep, %var_300%
@@ -234,8 +273,6 @@ Loop
     ImageSearch, vx, vy, 0, 0, 1920, 1080, *30 Bug.png
     if (ErrorLevel = 0)
     {
-
-
         SoundPlay, mario.wav
         teleport(gosthouse_name, true)
         break
