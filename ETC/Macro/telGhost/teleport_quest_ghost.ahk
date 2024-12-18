@@ -64,18 +64,18 @@ teleport(name, item)
 }
 
 `:: ; 저중마헬
-;Sendinput, {5} ;
-;Random, var_80, 80, 85
-;sleep, %var_80%
-;Sendinput, {Enter} ;
-;Random, var_80, 80, 85
-;sleep, %var_80%
-;Sendinput, {6} ;
-;Random, var_80, 80, 85
-;sleep, %var_80%
-;Sendinput, {Enter} ;
-;Random, var_80, 80, 85
-;sleep, %var_80%
+Sendinput, {5} ;
+Random, var_80, 80, 85
+sleep, %var_80%
+Sendinput, {Enter} ;
+Random, var_80, 80, 85
+sleep, %var_80%
+Sendinput, {6} ;
+Random, var_80, 80, 85
+sleep, %var_80%
+Sendinput, {Enter} ;
+Random, var_80, 80, 85
+sleep, %var_80%
 ;Sendinput, {7} ;
 ;sleep, 80
 ;Sendinput, {Enter} ;
