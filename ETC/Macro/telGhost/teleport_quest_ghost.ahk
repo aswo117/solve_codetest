@@ -34,7 +34,8 @@ teleport(name, item)
         Sendinput, {z} ; release 비영
         Random, var_50, 50, 55
         sleep, %var_50%
-        Sendinput {1}
+        Random, doorway, 1, 4
+        Sendinput {%doorway%}
         Random, var_50, 50, 55
         sleep, %var_50%
         Sendinput {Enter}
@@ -183,10 +184,14 @@ return
 \:: ; 왕퀘용
 Loop
 {
-    click 736 76 ; click king
+    Random, x_kingpoint, 730, 735
+    Random, y_kingpoint, 70, 76
+    click %x_kingpoint% %y_kingpoint% ; click king
     Random, var_100, 100, 105
     sleep, %var_100%
-    click 736 76 ; click king
+    Random, x_kingpoint, 730, 735
+    Random, y_kingpoint, 70, 76
+    click %x_kingpoint% %y_kingpoint% ; click king
     Random, var_100, 100, 105
     sleep, %var_100%
     ;Space
@@ -197,10 +202,14 @@ Loop
     Sendinput, {Space}
     Random, var_150, 150, 155
     sleep, %var_150%
-    click 900 385 ; click king
+    Random, x_boxpoint, 890, 900
+    Random, y_boxpoint, 380, 385
+    click %x_boxpoint% %y_boxpoint% ; click king
     Random, var_100, 100, 105
     sleep, %var_100%
-    click 900 385 ; click king
+    Random, x_boxpoint, 890, 900
+    Random, y_boxpoint, 380, 385
+    click %x_boxpoint% %y_boxpoint% ; click king
     Random, var_100, 100, 105
     sleep, %var_100%
     ;Space
@@ -209,10 +218,14 @@ Loop
     sleep, %var_100%
 ;    Sendinput, {Down}
 ;    sleep, 100
-    click 900 385 ; click king
+    Random, x_boxpoint, 890, 900
+    Random, y_boxpoint, 380, 385
+    click %x_boxpoint% %y_boxpoint% ; click king
     Random, var_100, 100, 105
     sleep, %var_100%
-    click 900 385 ; click king
+    Random, x_boxpoint, 890, 900
+    Random, y_boxpoint, 380, 385
+    click %x_boxpoint% %y_boxpoint% ; click king
     Random, var_100, 100, 105
     sleep, %var_100%
     ;Space
