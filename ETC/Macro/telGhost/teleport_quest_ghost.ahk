@@ -1,11 +1,13 @@
+
 ;Todo > imagesearch > check ghost house(완) > go to person (완) > pause resume 구현
+;춫츷춫춫줓즟
 
 #NoEnv
-#Singleinstance Force ;이률 크차
-
-Kingdom_name = 죠르르 ;오도출
-gosthouse_name2 = 바스출 ;
-gosthouse_name = 죠르르죠르르 ;진흥도사
+#Singleinstance Force ;1567 1764 ;1840 - 135개
+Kingdom_name = 그루피 ;돈딩이
+gosthouse_name = 수바키 ;춫츷춫춫줓즟
+gosthouse_name2 = 쭈냥도사 ;단설화 미미걸
+gosthouse_name3 = 죠르르 ;깅싱 상봉역
 
 global clear_flag = 0
 
@@ -94,7 +96,7 @@ Random, var_80, 80, 85
 sleep, %var_80%
 return
 
-q:: ; 출두 본궁
+]:: ; 출두 본궁
 teleport(Kingdom_name, false)
 return
 
@@ -104,6 +106,31 @@ return
 
 r:: ; 흉 출두2
 teleport(gosthouse_name2, false)
+return
+
+t:: ; 흉 출두3
+teleport(gosthouse_name3, false)
+return
+
+/::
+Sendinput, {shift down} ; press shift
+Random, var_100, 100, 105
+sleep, %var_100%
+Sendinput, {z} ; use magic
+Random, var_100, 100, 105
+sleep, %var_100%
+Sendinput, {shift up} ; release shift
+Random, var_100, 100, 105
+sleep, %var_100%
+Sendinput, {m} ; release chuldoo
+Random, var_100, 100, 105
+sleep, %var_100%
+Sendinput, ★☆흉중 입니다☆★ ;출두 name?
+Random, var_100, 100, 105
+sleep, %var_100%
+Sendinput, {enter}
+Random, var_100, 100, 105
+sleep, %var_100%
 return
 
 /*
@@ -184,14 +211,28 @@ return
 \:: ; 왕퀘용
 Loop
 {
-    Random, x_kingpoint, 730, 735
-    Random, y_kingpoint, 70, 76
+    ;고구려
+    ;415 105
+    Random, x_kingpoint, 414, 415
+    Random, y_kingpoint, 104, 105
     click %x_kingpoint% %y_kingpoint% ; click king
+    ;부여
+    ;Random, x_kingpoint, 530, 532
+    ;Random, y_kingpoint, 120, 121
+    ;click %x_kingpoint% %y_kingpoint% ; click king
+
     Random, var_100, 100, 105
     sleep, %var_100%
-    Random, x_kingpoint, 730, 735
-    Random, y_kingpoint, 70, 76
+
+    ;고구려
+    Random, x_kingpoint, 414, 415
+    Random, y_kingpoint, 104, 105
     click %x_kingpoint% %y_kingpoint% ; click king
+    ;부여
+    ;Random, x_kingpoint, 530, 532
+    ;Random, y_kingpoint, 120, 121
+    ;click %x_kingpoint% %y_kingpoint% ; click king
+
     Random, var_100, 100, 105
     sleep, %var_100%
     ;Space
@@ -291,6 +332,13 @@ Loop
         break
     }
     ImageSearch, vx, vy, 0, 0, 1920, 1080, *30 Mong.png
+    if (ErrorLevel = 0)
+    {
+        SoundPlay, mario.wav
+        teleport(gosthouse_name, true)
+        break
+    }
+    ImageSearch, vx, vy, 0, 0, 1920, 1080, *30 Mop.png
     if (ErrorLevel = 0)
     {
         SoundPlay, mario.wav
