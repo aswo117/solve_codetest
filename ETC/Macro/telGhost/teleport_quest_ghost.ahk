@@ -2,6 +2,23 @@
 ;춫츷춫춫줓즟
 
 /*
+
+}::
+SetTimer, PlaySound, -10000 ; 10초 후에 PlaySound 실행 (음수 사용)
+Return
+PlaySound:
+    SoundPlay, mario.wav ;https://freesori.tistory.com/m/2
+Return
+return
+
+}::
+SetTimer, PlaySound, -60000 ; 60초 후에 PlaySound 실행 (음수 사용)
+Return
+PlaySound:
+    SoundPlay, mario.wav ;https://freesori.tistory.com/m/2
+Return
+return
+
 1.
 일단 시냅스에서 프로필을 각각 만들어주셔야 합니다.
 그 후에 상단탭에 프로필탭으로 가시면 각각의 프로필마다 게임을 지정해줄수가 있어요.
