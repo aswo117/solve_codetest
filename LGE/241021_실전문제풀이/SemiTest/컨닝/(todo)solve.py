@@ -30,6 +30,7 @@ def Solve1():
 
 def Solve2():
     list_file.sort()
+   #배열, 기준값, start, end (start와 end를 지정 안하면 전체 구간을 함.)
     return sum(i - bisect.bisect_left(list_file, list_file[i]*0.9, 0, i+1) for i in range(1, N))
 
 def Input_Data():
